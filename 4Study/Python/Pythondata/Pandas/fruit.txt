@@ -1,0 +1,6 @@
+no	日本語	English	한글	kcal
+no1	リンゴ	apple	사과	54
+no2	オレンジ	orange	오랜지	47.1
+no3	パイナップル	pineapple	파인애플	50.9
+no4	イチゴ	strawberry	딸기	33.9
+no5	ナシ	pear	배	57.1

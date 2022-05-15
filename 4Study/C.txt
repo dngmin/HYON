@@ -1,0 +1,374 @@
+#include<stdio.h>
+
+
+
+★ コメント
+
+/* コメント */
+//コメント
+
+ctrl + k +c - コメント
+ctrl + k +u - コメント解除
+
+
+
+★ int float double char
+
+int main(){
+     int a = 10;
+     float b = 10.10;
+     double c = 10.101;
+     char d = 'A';
+     char e[256];
+
+     printf("%d\n",a);
+     printf("%f\n",b);
+     printf("%lf\n",c);
+     printf("%c\n",d);
+     scanf_s("%s",e,sizeof(e));
+     printf("%s\n",e);
+
+}
+%a.bf | %a.blf - 素数点以上a桁まで,素数点以下b桁まで
+
+
+
+★ const
+
+int main(){
+     const int a =10;
+     a = 100;   <- error
+}
+
+
+
+★ printf
+
+int main(){
+     int add = 3+7;
+     printf("3 + 7 = %d\n",add);
+     printf("%d + %d = %d\n",3,7,3+7);
+}
+
+
+
+
+★ scanf
+
+int main(){
+     int a,b,c;
+     scanf_s("%d %d %d",&a,&b,&c);
+     printf("%d %d %d",a,b,c);
+}
+
+
+
+★ ++
+
+int main(){
+     int a =10;
+     int b =20;
+     printf("%d\n",a); // a = 10
+     a ++
+     printf("%d\n",a); // a = 11
+
+     printf("%d\n",++b); // b = 21 // 先に足す
+     printf("%d\n",b++); // b = 21 // 後で足す
+     printf("%d\n",b);  // b = 22
+}
+
+
+
+★ loop
+
+☆for
+// for (宣言,条件,増減)( )
+
+int main(){
+     for (int i =1; i<= 10; i++){
+          printf("Hello World %d\n",i);
+}
+
+☆ while
+// while (条件)( )
+// while (1) : 無限ループ
+
+int main(){
+     while(i<=10){
+          printf("Hello World %d\n",i++);
+}
+
+☆ do while
+// do( ) while (条件)
+
+int main(){
+     int i = 1;
+     do{
+          printf("Hello World %d\n",i++);
+     }while (i <=10);
+}
+
+☆double for
+
+int main(){
+     for ( int i = 2;i <= 9;i++){
+          for ( int j =1; j<= 9; j++){
+               printf("%d x %d = %d",i,j,i*j);
+          }
+     }
+}
+
+
+
+★ 条件
+
+☆if
+//if (条件) ( )
+//else If(条件) ( )
+//else ( )
+
+int main(){
+     int number = 8;
+     if (number < 0){
+          printf("minus");
+     }
+     else if (number > 0){
+          printf("plus");
+     }
+     else {
+          printf("Zero");
+     }
+}
+
+☆break
+int main(){
+     for (int i=1;i<=10;,i++){
+          if (i == 3){
+               printf("not 3, break");
+               break;
+          }
+          printf("%d\n",i);
+     }
+}
+
+☆continue
+int main(){
+     for (int i=1;i<=10;i++){
+          if (i == 3){
+               printf("not 3,continue);
+               continue; 
+          }
+          printf("%d\n",i);
+     }
+}
+
+☆AND OR NOT
+// && || !
+
+int main(){
+     int a = 1;
+     int b = 2;
+
+     if (a==1 && b==2){
+          printf("AND");
+     }
+     if (a==1 || b ==1{
+          printf("OR");
+     }
+     if (!(a==2)){
+          printf("NOT");
+     }
+}
+
+☆switch
+
+int main(){
+     int i = 0;
+     switch(i){
+     case 0:printf("ZERO"); break;
+     case 1:printf("ONE"); break;
+     case 2:printf("TWO"); break;
+     default:printf("another"); break;
+     }
+}
+// 条件に満ちたcaseが行われるとその以降のswitch内の関数は
+// 全部実行されるので各々break;をつける
+
+int main(){
+     int i =0;
+     switch(i){
+     case 8:
+     case 9: printf("under 10\n"); break;
+     case 10:
+     case 11:
+     case 12:
+     case 13: printf("over 10\n"); break;
+     default: printf(".ect\n"); break;
+     }
+}
+
+
+
+★ Random
+
+#include<time.h>
+#include<stdlib.h>
+#include<stdio.h>
+
+int main(){
+     srand(time(NULL)); // 乱数初期化
+     printf("%d",rand()%10);
+}
+
+// rand() % n : 0~(n-1)の間の乱数
+
+
+
+★ Funtion
+// 戻り値タイプ 関数名 (引数) ( )
+// 関数の定義の前宣言必要
+
+☆戻り値がない関数
+void no_return_funtion();
+
+void no_return_funtion(){
+     printf("Hello\n");
+}
+
+int main(){
+     no_return_funtion();
+}
+
+☆戻り値がある関数
+int return_funtion();
+
+int return_funtion(){
+     printf("world\n");
+     return 10;
+}
+
+int main(){
+     int a = return_funtion();
+     // aに戻り値が代入される
+}
+
+☆パラメータがある関数
+void parameter_funtion(int a,double b);
+
+void parameter_funtion(int a,double b){
+     printf("%d\n%lf),a,b)
+
+int main(){
+     parameter_funtion(10,11);
+}
+
+☆戻り値,パラメータがある関数
+int cal(int a,int b);
+
+int cal(int a,int b){
+     return a+b;
+}
+
+int main(){
+     int val=cal(3,4);
+     printf("%d\n",val);
+     printf("%d\n",cal(3,4);
+}
+
+
+
+★ array
+
+☆配列
+// 配列は宣言して初期化必要
+// 配列大きさは必ず定数 //引数はダメ
+int main(){
+     int array[3]; // 大きさ３の１次元配列　// [0][1][2]
+     array[0] = 1;
+     array[1] = 2;
+     array[2] = 3;
+}
+
+int main(){
+     int array[3] = {1,2,3};
+}
+
+int main(){
+     int array[5] = {1,2,3}; // 代入されてない箇所は0になる
+}
+
+int main(){
+     int array[] = {1,2,3}; // []は与えられた配列の大きさに合わせる
+}
+
+☆文字
+int main(){
+     char a = 'A';
+     printf("%c\n".a);
+}
+
+☆文字列
+// 文字列の最後には終わりを意味するNULL文字
+// '\0'を含めないといけない
+int main(){
+     char a[5]="hello"; // [h][e][l][l][o]
+     printf("%s\n",a); // エラー
+}
+
+int main(){
+     char a[6]="hello" // [h][e][l][l][o][\0]
+     printf("%s\n",a);
+}
+
+int main(){
+     char a[6]={"h","e","l","l","o","\0"};
+     printf("%s\n",a);
+}
+
+
+
+★ASCII CODE
+// ANSI(アメリカ標準協会)が提示した標準コードシステム
+// 7bit ,128個のコード(0~127)
+
+int main(){
+     printf("%c\n","a"); // 文字a出力
+     printf("%d\n","a"); // aのアスキーコード出力
+     printf("%c\n","1"); // 文字1出力
+     printf("%d\n","1"); // 1のアスキーコード出力
+}
+
+☆アスキーコード参考
+int main(){
+     for (int i=0;i<128;1++){
+          printf("アスキーコード一覧 %c %d\n",i,i);
+     }
+}
+
+
+
+★ Pointer
+// ポインタを用いてアドレスを取り出すことができる
+
+int main(){
+     int a = 1;
+     int b = 2;
+
+     printf("a adress : %d\t a : %d",&a,a);
+     printf("b adress : %d\t b : %d",&b,b);
+}
+
+☆ポインタ引数
+// &引数でアドレスに変換
+// *アドレスで文字または数値に変換
+
+int main(){
+     int a = 1;
+     int pointer = &a; // ポインタ引数
+     printf("pointer adress : %d\t pointer : %d",pointer,*pointer);
+
+     int b = 2;
+     int pointer = &b;
+     *pointer = *pointer *3;
+     printf("pointer adress : %d\t pointer *3 : %d,pointer,*pointer);
+}

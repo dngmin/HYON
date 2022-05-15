@@ -1,0 +1,2 @@
+.ipynb → .html
+( reinstall nbconvert)

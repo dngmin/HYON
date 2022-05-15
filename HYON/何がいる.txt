@@ -1,0 +1,58 @@
+入力値 - 構造系審査書(2訂版)より
+✓ - 入力済み
+
+height           |ロケット全長[m]                                        |1.350✓
+diameter         |ロケットボディの直径[m]                                |0.105✓
+mass_dry         |乾燥時質量[kg]                                         |4.197✓ #電装機品なし
+CG_dry           |乾燥時重心位置[m].ノーズ先端からの距離                 |0.739✓
+MOI_dry          |乾燥時慣性モーメント[kg*m^2].[roll,pitch,yaw]          |[0.006803,0.5494,0.5494] 確認しよう
+Cm               |モーメント係数(安定微係数).[roll,pitch,yaw]            |下参考 [0.0,-2.581,-0.03877](Polycarbonate)
+lug_1st          |最もノーズに近いランチラグの先端からの位置[m]          |0.3136✓
+lug_2nd          |2番目にノーズに近いランチラグのノーズ先端からの位置[m] |1.320✓
+Cd0              |マッハ0.1,仰角0[deg]での抵抗系数値                     |0.43✓
+Clalpha          |揚力傾斜値                                             |6.87✓
+CP               |空力中心位置,ノーズ先端からの長さ[m?]                  |0.944✓
+MOI_prop         |推進剤慣性モーメント[kg*m^2].[roll,pith,yaw]           |[0.001677,0.003257,0.003257]　そうそう
+mass_prop        |離床前の推進剤の重量[kg]                               |0.448✓
+CG_prop          |ノーズ先端から推進剤重心位置までの距離[m]              |0.995✓
+thrust_curve_csv |スラストカーブのcvs                                    |てきとう✓
+thrust_dt        |スラストカーブのサンプリング間隔[s]                    |指定✓
+latitude         |ランチャ地点の緯度[deg][現在未使用]                    |-
+longitude        |ランチャ地点の経度[deg][現在未使用]                    |-
+alt_launcher     |ランチャ地点の標高[m][現在未使用]                      |-
+azimuth          |ランチャ方位角[deg]                                    |指定
+elev_angle       |ランチャ仰角[deg]                                      |指定
+rail_lenth       |ランチャレール長[m]                                    |5.1✓
+dt               |シミュレーションの時間間隔[s]                          |指定
+t_max            |シミュレーションする最長時間[s]                        |指定
+is_drogue        |ドローグシュートを使用するか                           |False✓
+Cd_drogue        |ドローグシュートの抵抗係数[if is_droge True]           |-
+S_drogue         |ドローグシュートの有効面積[if is_droge True][m^2?]     |-
+Cd_para          |メインパラシュートの抵抗係数                           |おお 0.8
+S_para           |メインパラシュートの有効面積[m^2?]                     |おお 2.84(西本おすすめ)
+drogue_trigger   |ドローグシュート展開条件                               |指定
+para_trigger     |メインパラシュート展開条件[時間,頂点から経過時間,高度] |指定
+wind_model       |風モデルの種類                                         |指定
+wind_parameters  |風モデルに応じるパラメータのディクショナリ             |指定であるが決めとく必要有り
+
+_______________________________________________________________________________________________________
+Cm
+
+length_body        |from nose to body.without tail[m]                    |1.350
+diameter_body      |[m]                                                  |0.105
+mass_body          |[kg]                                                 |4.197 #電装機品なし
+length_cg          |from nose tip[m]                                     |0.739
+shape_nose         |[ogive]                                              |ogive
+length_nose        |[m]                                                  |0.072
+deameter_tail      |[m]                                                  |0
+length_tail        |[m]                                                  |0
+offset_fin         |from body end to fin end[mm]                         |0
+root_chord         |[mm]                                                 |120
+tip_chord          |[mm]                                                 |56
+leading_edge_chord |root_chord - tip_chord[mm]                           |64
+span               |[mm]                                                 |72
+thickness_fin      |フィン厚さ[mm]                                       |3
+young_modulus      |ヤング率[Gpa]                                        |2.0(Polycarbonate)
+posisson_ratio     |ポアソン比[-]                                        |0.37(Polycarbonate)
+rho_fin            |フィン密度[kg/m3]                                    |0.0012(Polycarbonate)
+altitude           |[m]                                                  |指定

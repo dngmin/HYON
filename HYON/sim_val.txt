@@ -1,0 +1,17 @@
+X drag - 0.75
+Y drag - 0.1
+X area - 0.008659
+Y area - 0.153048
+launch angle deg - 80
+wind V - 10
+wind angle yz deg - 60
+Tem0 °C - 10
+P0 hpa - 1013.25
+h0 - 0
+mi - 4.629
+mf - 4.462
+t com - 2.2569
+t act - 3.0577
+T com - 548.408539313006000334
+T total - 598.0810864843343
+k - 0.1

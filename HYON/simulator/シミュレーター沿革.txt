@@ -1,0 +1,8 @@
+2022.02.09 - ver 0.0   | base作り
+2022.02.11 - ver 0.1   | GUI化
+2022.02.14 - ver 0.2   | savepath
+2022.02.22 - ver 0.2.1 | parameters simplified
+2022.03.01 - ver 0.3   | exception
+2022.03.07 - ver 0.4   | visual graph
+
+for Hyon by Kimdongmin
